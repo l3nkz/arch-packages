@@ -4,7 +4,7 @@
 
 pkgname=mutt-sidebar
 pkgver=1.5.23
-pkgrel=3
+pkgrel=4
 pkgdesc='Small but very powerful text-based mail client'
 arch=('i686' 'x86_64')
 url='http://www.mutt.org/'
