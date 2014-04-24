@@ -15,3 +15,11 @@ This package contains the console mail client [mutt](http://www.mutt.org/ "mutt"
 a partly self developed sidebar patch. This patch adds a sidebar to mutt showing your
 mailboxes. This patch additionally adds proper support for folder indention and short
 folder names in the sidebar.
+
+
+brightd
+-------
+This package contains the back light management tool
+[brightd](http://www.pberndt.com/Programme/Linux/brightd/index.html# "brightd") for
+Thinkpad Laptops. This tool automatically dims your screen if there is no activity
+going on.
