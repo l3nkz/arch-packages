@@ -4,7 +4,7 @@
 
 pkgname=mutt-sidebar
 pkgver=1.5.23
-pkgrel=4
+pkgrel=5
 pkgdesc='Small but very powerful text-based mail client'
 arch=('i686' 'x86_64')
 url='http://www.mutt.org/'
@@ -17,7 +17,7 @@ source=("https://bitbucket.org/mutt/mutt/downloads/mutt-${pkgver}.tar.gz"
         "sidebar.patch"
         "ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/mutt/trashfolder-1.5.22.diff0.gz")
 sha512sums=('f1b4a7230253651857f61bd7215cce870a613012f613d4c907d401556083726c8ed7d429d57a8bf858c3b5b23683380d4c1494540d86ca80813e22cb6b95bc1e'
-            '9acf27223e865fb6d0075aa870bf6acdfd657fe4065b7e7baaf73c2002905c49c087c52440f1268e48453bac85d2b43a135473a0ae187325668747819d018aeb'
+            '496de6e1db23cba000bd11efb2f396f2616cda050f38338be591fd8093d41ef5d24c3b9d5f25c225e3b8e8ff16c6cd29954e4c17bc449da7d8c5e8171ec1835f'
             'a00075888c12ce55e5173788d9e0397f4cc65f8344328112342399b9734f041e80cceaee18ce68fe79471457e72b743b08112bf4f71d251db25f45ed5ee27ada')
 
 prepare() {
