@@ -1,5 +1,6 @@
 [Unit]
 Description=Automatically fade screen when idle
+After=systemd-udevd.service
 
 [Service]
 Type=simple
