@@ -1,0 +1,18 @@
+# Maintainer: Till Smejkal <till.smejkal+packages@ossmail.de>
+
+pkgname=systemd-screenlock
+pkgver=1
+pkgrel=1
+pkgdesc='Systemd Service which triggers a lock signal before going to sleep'
+arch=('any')
+url='ossmail.de'
+license=('GPL')
+depends=('systemd')
+
+source=('screenlock.service')
+sha512sums=('f2546846427a3b2a21df4244f083a0e50ff7fbb8bffa052be6a436f8217ad01aebfdba6533ac67940cb8119cfd8a86b3e4287ed059ced5cf996fe0c4785ccda9')
+
+package() {
+    # Install the service file
+    install -D -m 644 screenlock.service "$pkgdir"/usr/lib/systemd/system/screenlock.service
+}
