@@ -1,8 +1,9 @@
 [Unit]
 Description=Propagate Network is Online
-BindsTo=network-online.target
-After=network-online.target
-After=user@%I.service
+PartOf=network-online.target
+Requisite=network-online.target user@.service
+After=network-online.target user@.service
+RefuseManualStart=yes
 
 [Service]
 User=%I
@@ -13,4 +14,4 @@ ExecStart=/usr/bin/systemctl --user start network-online.target
 ExecStop=/usr/bin/systemctl --user stop network-online.target
 
 [Install]
-WantedBy=network-online.target
+WantedBy=network-online.target user@%i.service

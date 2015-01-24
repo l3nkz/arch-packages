@@ -2,7 +2,7 @@
 
 pkgname=systemd-propagate
 pkgver=1
-pkgrel=2
+pkgrel=3
 pkgdesc='Systemd Services to propagate various targets of the system session to a user session'
 arch=('any')
 url='ossmail.de'
@@ -18,9 +18,9 @@ source=('propagate@.service'
         'network-online.target')
 
 sha512sums=('854bb271c70f451788bf4d024f675c25a38bf70c0726f143facbd9686bd1bc0726dfcb841e75c4010ad777a2dd1f2e51310af673a7b0d9e9676eae547748f9fb'
-            '801864d661a1c65d4342ab5406e77c15d2bb129ce807ffb5509733712adb95236406a0e4eb5d52467a9e1a73e309d69f1efb16da18a95f77cd9dcbb8043cce2e'
+            '9f5a734afa04d2d81a86ddfad4776ea00e29420b500f40538fec9ec65c0fcb8ea4ca09d81819d1498cb72b432270d12d3d03d6d99978a13718b848a4d97bc390'
             '320e53155ee0387d197d737966ab5d7a00bb5bdf7f4beb65b968bb62667a9c34dcf64f187526b73c54fa288eb915647b14dd8492724c647a4dea0633e7f04e94'
-            '0001c77ed3dba6479a66d5a07c0a53373a2fc99dbd42aef62616ae35a6090106e30e405df0b39b3f5d0c5abc91fa899feafa733f52145c4cca766c5c39578dcb'
+            '7e2533bcd3ed3566329f32bb3ce97b4dff905d5c0da088460f20dd53d27fe50c09a2ed85018198887601c16c49908a9b630b63321ab050e5e328d4799a682f25'
             '9655b3d450c1bffd1411d2d3c79fdf6d54a82f64b7cd221da4d33441eef3c8a4b2c898229e4785ce458ed84ad049e5f2b07d914d04171238cc12695d40037789')
 
 package() {
