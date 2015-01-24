@@ -1,9 +1,9 @@
 post_install() {
-  cat <<EOF
+    cat <<EOF
+To change parameters add a directory brightd.service.d in /etc/systemd/system/ and
+add a options.conf file there. In this file the ExecStart option of the service file
+can be overwritten according to your needs.
 
-To change startup paramters, copy /usr/lib/systemd/system/brightd.service to
-/etc/systemd/system/ and modify ExecStart.
-
-See brightd(1) for available parameters.
+See brightd(1) for available parameters and systemd.unit(5) for more information.
 EOF
 }
