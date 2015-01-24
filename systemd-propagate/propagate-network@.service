@@ -3,11 +3,12 @@ Description=Propagate Network
 RefuseManualStart=yes
 BindsTo=network.target
 After=network.target
+After=user@%I.service
 
 [Service]
 User=%I
 Type=oneshot
-Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%U/dbus/user_bus_socket
+Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%I/dbus/user_bus_socket
 RemainAfterExit=yes
 ExecStart=/usr/bin/systemctl --user start network.target
 ExecStop=/usr/bin/systemctl --user stop network.target

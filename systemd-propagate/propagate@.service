@@ -1,0 +1,9 @@
+[Unit]
+Description=Propagate Targets for %i
+
+[Service]
+ExecStart=/usr/bin/true
+
+[Install]
+Also=propagate-network@.service
+Also=propagate-network-online@.service
