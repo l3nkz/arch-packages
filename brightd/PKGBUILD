@@ -18,7 +18,7 @@ source=("http://www.pberndt.com/raw/Programme/Linux/brightd/_download/brightd-${
         "proposal.patch")
 
 sha256sums=('ee1ab935bafbc9f21d32e771c2b99c107f059a87094441367089ad38e813b78e'
-            '9b9e3952a7a77a5e6a7753bf8b9279c7b565791904020c0869ad3d5558fcbb5d'
+            'db16fcbac8a5a9797ff743178a134684767fb93cf6f71d1eff490b384aa20a21'
             'f491fb7aeecf8fe86742a950fcbb21365e6609b295ecf22fceee502159c1284b')
 
 build() {
