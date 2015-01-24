@@ -29,3 +29,9 @@ systemd-screenlock
 ------------------
 This package provides a systemd service file which will trigger a 'loginctl lock-session'
 command every time the laptop goes to sleep.
+
+
+systemd-propagate
+-----------------
+This package provides systemd service files which allow propagation of some targets of the
+system session to a user session.

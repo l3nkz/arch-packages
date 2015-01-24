@@ -1,0 +1,31 @@
+# Maintainer: Till Smejkal <till.smejkal+packages@ossmail.de>
+
+pkgname=systemd-propagate
+pkgver=1
+pkgrel=1
+pkgdesc='Systemd Services to propagate various targets of the system session to a user session'
+arch=('any')
+url='ossmail.de'
+license=('GPL')
+depends=('systemd')
+
+install='systemd-propagate.install'
+
+source=('propagate-network@.service'
+        'network.target'
+        'propagate-network-online@.service'
+        'network-online.target')
+sha512sums=('0e40605a61553c672e19ee2ea646d5b0bc1fd2cadd0095f3c0d4c5b5cd90f80f5741fff08f67d5c8d54b0f93d70d1b3e70db4d68b8f306fe620e54e6ca77ec02'
+            '320e53155ee0387d197d737966ab5d7a00bb5bdf7f4beb65b968bb62667a9c34dcf64f187526b73c54fa288eb915647b14dd8492724c647a4dea0633e7f04e94'
+            '6e955481afc94b6b90ed5a795778d895f535bbe6be895cf09d35529fddeb8116f735b70090adc5a3bec6d30a1c2e370260a5ee9e955b55f3bb3c65da67137d13'
+            '9655b3d450c1bffd1411d2d3c79fdf6d54a82f64b7cd221da4d33441eef3c8a4b2c898229e4785ce458ed84ad049e5f2b07d914d04171238cc12695d40037789')
+
+package() {
+    # Install the system service files
+    install -D -m 644 propagate-network@.service "$pkgdir"/usr/lib/systemd/system/propagate-network@.service
+    install -D -m 644 propagate-network-online@.service "$pkgdir"/usr/lib/systemd/system/propagate-network-online@.service
+
+    # Install the user service files
+    install -D -m 644 network.target "$pkgdir"/usr/lib/systemd/user/network.target
+    install -D -m 644 network-online.target "$pkgdir"/usr/lib/systemd/user/network-online.target
+}

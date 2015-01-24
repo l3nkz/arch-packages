@@ -1,0 +1,15 @@
+[Unit]
+Description=Propagate Network is Online
+BindsTo=network-online.target
+After=network-online.target
+
+[Service]
+User=%I
+Type=oneshot
+Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%U/dbus/user_bus_socket
+RemainAfterExit=yes
+ExecStart=/usr/bin/systemctl --user start network-online.target
+ExecStop=/usr/bin/systemctl --user stop network-online.target
+
+[Install]
+WantedBy=network-online.target
