@@ -1,23 +1,25 @@
 # Maintainer: Till Smejkal <till.smejkal+packages@ossmail.de>
 
+# Own variables
+_pkgbase=pynoter
+_pkgsubver="-alpha2"
+
 # makepkg variables
 pkgname=python-pynoter
 pkgver=1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Python library for advanced desktop notifications."
 url="https://github.com/l3nkz/pynoter"
 depends=('python' 'python-dbus' 'python-gobject')
 makedepends=('python-setuptools')
 license=('GPL3')
 arch=('any')
-source=("https://github.com/l3nkz/pynoter/archive/v${pkgver}-alpha.tar.gz")
-sha512sums=(e1e039ee25be8b94b73304edb316549a3ff647ef0de1ebd20eb3ee7e8097d7bfbbb413a910582f4e57ac2bc7079bcf724e99b932804f806bdb3b6f3a0e2a0cb5)
+source=("https://github.com/l3nkz/pynoter/archive/v${pkgver}${_pkgsubver}.tar.gz")
+sha512sums=(f4c431b5cc7f9f50def977bc2c96e97d217be3efab0c97c24b42c6c7adc8bd68f12b1d38322709bdcdf331a88bd463a030ca4c79984e03207df35306544c98a5)
 
-# Own variables
-_pkgbase=pynoter
 
 package() {
-    cd "${srcdir}/${_pkgbase}-${pkgver}-alpha"
+    cd "${srcdir}/${_pkgbase}-${pkgver}${_pkgsubver}"
 
     # Install the python package.
     python setup.py install --root="${pkgdir}/" --optimize=1
