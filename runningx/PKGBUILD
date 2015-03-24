@@ -3,7 +3,7 @@
 
 pkgname=runningx
 pkgver=20101203
-pkgrel=1
+pkgrel=2
 pkgdesc="runningx is a simple C program to determine whether X is running."
 arch=('any')
 url=("http://www.fiction.net/blong/programs/mutt/")
@@ -13,10 +13,10 @@ source=('http://www.fiction.net/blong/programs/mutt/autoview/RunningX.c')
 md5sums=('31fa80ae98c0fefe11e4786b2d7e4e79')
 
 build() {
-    cd ${srcdir}
+    cd "${srcdir}"
     gcc -o runningx RunningX.c -lX11 -Wall
 }
 
 package() {
-    install -D -m 755 runningx ${pkgdir}/usr/bin/runingx
+    install -D -m 755 runningx "${pkgdir}/usr/bin/runingx"
 }
