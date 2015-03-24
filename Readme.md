@@ -17,6 +17,13 @@ mailboxes. This patch additionally adds proper support for folder indention and 
 folder names in the sidebar.
 
 
+runningx
+--------
+This package contains a small program checking whether an X server is currently running.
+This program can be used in conjunction with mutt's mailcap functionality. The original
+program is developed [here](http://www.fiction.net/blong/programs/mutt/autoview/RunningX.c).
+
+
 brightd
 -------
 This package contains the back light management tool
