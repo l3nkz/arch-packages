@@ -1,8 +1,8 @@
 # Maintainer: Till Smejkal <till.smejkal+packages@ossmail.de>
 
 pkgname=systemd-screenlock
-pkgver=1.0
-pkgrel=2
+pkgver=1.1
+pkgrel=1
 pkgdesc="Session locking using systemd"
 url="https://github.com/l3nkz/systemd-screenlock"
 depends=('systemd' 'python' 'python-dbus' 'python-gobject')
@@ -10,7 +10,7 @@ license=('GPL3')
 arch=('any')
 
 source=("https://github.com/l3nkz/systemd-screenlock/archive/v${pkgver}.tar.gz")
-sha512sums=('eefa35a79ad8eda717ab5c0b5c9462081123223a32520de70e0b8acc940a68900ffa53675f7a52f47cc0c0df93cd42e2acc781c600ce59a16d446d10a9444a36')
+sha512sums=('28b3f58c36e58fc913501634672058bd04b4904b5f1a8c866e2ff422c219ff0b484bee4db9fdfc9d1f2687598617faad6121702406f2114a45d1a81a9d7e3707')
 
 package() {
     cd "${srcdir}/${pkgname}-${pkgver}"
