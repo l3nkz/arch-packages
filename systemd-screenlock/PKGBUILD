@@ -1,18 +1,24 @@
 # Maintainer: Till Smejkal <till.smejkal+packages@ossmail.de>
 
 pkgname=systemd-screenlock
-pkgver=1
-pkgrel=1
-pkgdesc='Systemd Service which triggers a lock signal before going to sleep'
+pkgver=1.0
+pkgrel=2
+pkgdesc="Session locking using systemd"
+url="https://github.com/l3nkz/systemd-screenlock"
+depends=('systemd' 'python' 'python-dbus' 'python-gobject')
+license=('GPL3')
 arch=('any')
-url='ossmail.de'
-license=('GPL')
-depends=('systemd')
 
-source=('screenlock.service')
-sha512sums=('f2546846427a3b2a21df4244f083a0e50ff7fbb8bffa052be6a436f8217ad01aebfdba6533ac67940cb8119cfd8a86b3e4287ed059ced5cf996fe0c4785ccda9')
+source=("https://github.com/l3nkz/systemd-screenlock/archive/v${pkgver}.tar.gz")
+sha512sums=('eefa35a79ad8eda717ab5c0b5c9462081123223a32520de70e0b8acc940a68900ffa53675f7a52f47cc0c0df93cd42e2acc781c600ce59a16d446d10a9444a36')
 
 package() {
-    # Install the service file
-    install -D -m 644 screenlock.service "$pkgdir"/usr/lib/systemd/system/screenlock.service
+    cd "${srcdir}/${pkgname}-${pkgver}"
+
+    # Install the binary
+    install -D -m 755 lock-forward "${pkgdir}"/usr/bin/lock-forward
+
+    # Install the service files
+    install -D -m 644 screenlock.service "${pkgdir}"/usr/lib/systemd/system/screenlock.service
+    install -D -m 644 lock-forward@.service "${pkgdir}"/usr/lib/systemd/user/lock-forward@.service
 }
