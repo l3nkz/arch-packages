@@ -48,3 +48,9 @@ python-pynoter
 --------------
 This package contains the [pynoter](https://github.com/l3nkz/pynoter "pynoter") python package
 which provides a python library for advanced notifications.
+
+
+passwrapper
+-----------
+This package provides the [passwrapper](https://github.com/l3nkz/passwrapper "passwrapper") 
+script which allows smooth management of multiple password stores on one machine.
