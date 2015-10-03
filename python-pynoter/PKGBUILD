@@ -7,7 +7,7 @@ _pkgsubver="-beta"
 # makepkg variables
 pkgname=python-pynoter
 pkgver=1.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Python library for advanced desktop notifications."
 url="https://github.com/l3nkz/pynoter"
 depends=('python' 'python-dbus' 'python-gobject')
