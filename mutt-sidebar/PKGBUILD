@@ -3,8 +3,8 @@
 # Contributor: Gaetan Bisson <bisson@archlinux.org>
 
 pkgname=mutt-sidebar
-pkgver=1.5.23
-pkgrel=6
+pkgver=1.6.0
+pkgrel=1
 pkgdesc='Small but very powerful text-based mail client'
 arch=('i686' 'x86_64')
 url='http://www.mutt.org/'
@@ -13,21 +13,22 @@ depends=('gpgme' 'krb5' 'libidn' 'mime-types')
 optdepends=('smtp-forwarder: to send mail')
 conflicts=('mutt')
 provides=('mutt')
-source=("https://bitbucket.org/mutt/mutt/downloads/mutt-${pkgver}.tar.gz"
+source=("ftp://ftp.mutt.org/pub/mutt/mutt-${pkgver}.tar.gz"
         "sidebar.patch"
-        "ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/mutt/trashfolder-1.5.22.diff0.gz")
-sha512sums=('f1b4a7230253651857f61bd7215cce870a613012f613d4c907d401556083726c8ed7d429d57a8bf858c3b5b23683380d4c1494540d86ca80813e22cb6b95bc1e'
-            '496de6e1db23cba000bd11efb2f396f2616cda050f38338be591fd8093d41ef5d24c3b9d5f25c225e3b8e8ff16c6cd29954e4c17bc449da7d8c5e8171ec1835f'
-            'a00075888c12ce55e5173788d9e0397f4cc65f8344328112342399b9734f041e80cceaee18ce68fe79471457e72b743b08112bf4f71d251db25f45ed5ee27ada')
+        "attachments.patch"
+        "trashfolder.patch")
+sha512sums=('601d5f70c7cd30903799714cd85b80f9650a029e621d044075e123656411dde809d5cef24a40ba49860bc242cf4a0b914c703deb5a7125b3a24eeb93f4ae3c4c'
+            '26d594a053e7f849b09d161335642336f0dfe033fb506dd49dac65026a4f48e65eeff35db29149d2e336b2b11d7a136fe9271af7e9427ed7b6bef3bbd7cd6ba6'
+            '24d943d512fa5ceaf76ab7342642255769cb70acb08d061d57d0a2cd15e88b5719af501501585a9a67ada37bee7e8dd592847b416e24e764084b39ca132b798b'
+            '8d607738f4683890e2ef80f4cc104f0ed7be8e519f3cc4c944d1c7415518fd8d365c62d0fb0799e8cb7db19ca2459a7d94858877b87ed6fb1c12d6d6e19ea193')
 
 prepare() {
   cd "$srcdir/mutt-$pkgver"
 
-  # patch to add trash folder support
-  patch -Np1 -i "$srcdir"/trashfolder-1.5.22.diff0
-
-  # patch to add sidebar support
+  # apply patches
   patch -Np1 -i "$srcdir"/sidebar.patch
+  patch -Np1 -i "$srcdir"/attachments.patch
+  patch -Np1 -i "$srcdir"/trashfolder.patch
 
   # fix automake issue
   autoreconf -vfi
