@@ -4,7 +4,7 @@
 # Contributor: Gaetan Bisson <bisson@archlinux.org>
 
 pkgname=mutt-sidebar
-pkgver=1.6.0
+pkgver=1.6.1
 pkgrel=1
 pkgdesc='Small but very powerful text-based mail client'
 arch=('i686' 'x86_64')
@@ -18,7 +18,7 @@ source=("ftp://ftp.mutt.org/pub/mutt/mutt-${pkgver}.tar.gz"
         "sidebar.patch"
         "attachments.patch"
         "trashfolder.patch")
-sha512sums=('601d5f70c7cd30903799714cd85b80f9650a029e621d044075e123656411dde809d5cef24a40ba49860bc242cf4a0b914c703deb5a7125b3a24eeb93f4ae3c4c'
+sha512sums=('a45c7bc681ea31a6ee37e95a11f3ec84f580478367250c80eaf5aceeba87e34411346a8b7e80a0f236c507cec1199ddc3ccf4596b81d7e31c235099dccdd4fd5'
             '26d594a053e7f849b09d161335642336f0dfe033fb506dd49dac65026a4f48e65eeff35db29149d2e336b2b11d7a136fe9271af7e9427ed7b6bef3bbd7cd6ba6'
             '24d943d512fa5ceaf76ab7342642255769cb70acb08d061d57d0a2cd15e88b5719af501501585a9a67ada37bee7e8dd592847b416e24e764084b39ca132b798b'
             '8d607738f4683890e2ef80f4cc104f0ed7be8e519f3cc4c944d1c7415518fd8d365c62d0fb0799e8cb7db19ca2459a7d94858877b87ed6fb1c12d6d6e19ea193')
