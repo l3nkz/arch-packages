@@ -1,7 +1,7 @@
 # Packager: Till Smejkal <till.smejkal+packages@ossmail.de>
 
 pkgname=passwrapper
-pkgver=0.3
+pkgver=0.3.1
 pkgrel=1
 pkgdesc="passwrapper is a script to smoothly manage multiple password stores."
 arch=("any")
@@ -9,7 +9,7 @@ url="https://github.com/l3nkz/passwrapper"
 license=("gpl3")
 depends=("pass" "dmenu")
 source=("https://github.com/l3nkz/passwrapper/archive/v${pkgver}.tar.gz")
-md5sums=('19bd94939854b04b64a25018a0e93b87')
+md5sums=('727373139d633d136442816f82ede11e')
 
 package() {
     cd "${srcdir}/${pkgname}-${pkgver}"
