@@ -1,21 +1,22 @@
 # Packager: Till Smejkal <till.smejkal+packages@ossmail.de>
 
 pkgname=passwrapper
-pkgver=0.11
+pkgver=0.3
 pkgrel=1
 pkgdesc="passwrapper is a script to smoothly manage multiple password stores."
 arch=("any")
-url=("https://github.com/l3nkz/passwrapper")
+url="https://github.com/l3nkz/passwrapper"
 license=("gpl3")
-depends=("pass")
+depends=("pass" "dmenu")
 source=("https://github.com/l3nkz/passwrapper/archive/v${pkgver}.tar.gz")
-md5sums=('01031015a051c9306eb5db574fe8ca95')
+md5sums=('19bd94939854b04b64a25018a0e93b87')
 
 package() {
     cd "${srcdir}/${pkgname}-${pkgver}"
 
     # Install the script
     install -D -m 755 passwrapper.sh "${pkgdir}/usr/bin/passwrapper.sh"
+    install -D -m 755 passwrappermenu "${pkgdir}/usr/bin/passwrappermenu"
 
     # Install completions
     install -D -m 644 completion.bash "${pkgdir}/usr/share/bash-completion/completions/passwrapper"
