@@ -9,14 +9,6 @@ The resulting packages are then kept in a custom repository. See the
 Included Packages
 =================
 
-mutt-sidebar
-------------
-This package contains the console mail client [mutt](http://www.mutt.org/ "mutt") with
-a partly self developed sidebar patch. This patch adds a sidebar to mutt showing your
-mailboxes. This patch additionally adds proper support for folder indention and short
-folder names in the sidebar.
-
-
 runningx
 --------
 This package contains a small program checking whether an X server is currently running.
