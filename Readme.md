@@ -16,14 +16,6 @@ This program can be used in conjunction with mutt's mailcap functionality. The o
 program is developed [here](http://www.fiction.net/blong/programs/mutt/autoview/RunningX.c).
 
 
-brightd
--------
-This package contains the back light management tool
-[brightd](http://www.pberndt.com/Programme/Linux/brightd/index.html# "brightd") for
-Thinkpad Laptops. This tool automatically dims your screen if there is no activity
-going on.
-
-
 systemd-screenlock
 ------------------
 This package provides a systemd service file which will trigger a 'loginctl lock-session'
