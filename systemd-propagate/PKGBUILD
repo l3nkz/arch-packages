@@ -2,7 +2,7 @@
 
 pkgname=systemd-propagate
 pkgver=1
-pkgrel=3
+pkgrel=5
 pkgdesc='Systemd Services to propagate various targets of the system session to a user session'
 arch=('any')
 url='ossmail.de'
@@ -11,21 +11,18 @@ depends=('systemd')
 
 install='systemd-propagate.install'
 
-source=('propagate@.service'
-        'propagate-network@.service'
+source=('propagate-network@.service'
         'network.target'
         'propagate-network-online@.service'
         'network-online.target')
 
-sha512sums=('854bb271c70f451788bf4d024f675c25a38bf70c0726f143facbd9686bd1bc0726dfcb841e75c4010ad777a2dd1f2e51310af673a7b0d9e9676eae547748f9fb'
-            '9f5a734afa04d2d81a86ddfad4776ea00e29420b500f40538fec9ec65c0fcb8ea4ca09d81819d1498cb72b432270d12d3d03d6d99978a13718b848a4d97bc390'
+sha512sums=('03f29cb70bb459f13b9bdbe40d6af141f0850430013ebc4a7f5c969d76bd59ff6ae0326b097276a37c82a916e8b425be1055638827c1974d87bafaf1bbb3ce5f'
             '320e53155ee0387d197d737966ab5d7a00bb5bdf7f4beb65b968bb62667a9c34dcf64f187526b73c54fa288eb915647b14dd8492724c647a4dea0633e7f04e94'
-            '7e2533bcd3ed3566329f32bb3ce97b4dff905d5c0da088460f20dd53d27fe50c09a2ed85018198887601c16c49908a9b630b63321ab050e5e328d4799a682f25'
+            'c8068c22e81d63011e984bd4968ecbdd8971a1f592c28cf829883ec6932b6e6fcaacc81175205326a7f63f152bf6a086d67f87f929bb7e636af3e8591abdebf0'
             '9655b3d450c1bffd1411d2d3c79fdf6d54a82f64b7cd221da4d33441eef3c8a4b2c898229e4785ce458ed84ad049e5f2b07d914d04171238cc12695d40037789')
 
 package() {
     # Install the system service files
-    install -D -m 644 propagate@.service "$pkgdir"/usr/lib/systemd/system/propagate@.service
     install -D -m 644 propagate-network@.service "$pkgdir"/usr/lib/systemd/system/propagate-network@.service
     install -D -m 644 propagate-network-online@.service "$pkgdir"/usr/lib/systemd/system/propagate-network-online@.service
 
