@@ -2,12 +2,12 @@
 
 # Own variables
 _pkgbase=pynoter
-_pkgsubver="-beta"
+_pkgsubver="-beta2"
 
 # makepkg variables
 pkgname=python-pynoter
 pkgver=1.0
-pkgrel=4
+pkgrel=6
 pkgdesc="Python library for advanced desktop notifications."
 url="https://github.com/l3nkz/pynoter"
 depends=('python' 'python-dbus' 'python-gobject')
@@ -15,7 +15,7 @@ makedepends=('python-setuptools')
 license=('GPL3')
 arch=('any')
 source=("https://github.com/l3nkz/pynoter/archive/v${pkgver}${_pkgsubver}.tar.gz")
-sha512sums=('67eade7454caa1f3c47124e5abdf6777e7c161cde7cdcec346b6cebf9b38f7bfdaf795511b096d66cfdcb0b28a9d68e23cacedefe0ce9caef3cfd2f8f141c0d4')
+sha512sums=('511f1e2cb8ea4ad70dc2d54a41b23fce9900cfc4ff93e63108ef39b7d55d855d31cbbf13b437be78fbf1e21228f0256921533add939359d3bbf614c4d333163c')
 
 
 package() {
@@ -26,5 +26,5 @@ package() {
 
     # Install the pynoter server binary and systemd service file.
     install -D -m 755 pyNoter "${pkgdir}/usr/bin/pyNoter"
-    install -D -m 644 pynoter.service "${pkgdir}/usr/lib/systemd/user/pynoter.service"
+    install -D -m 644 contrib/pynoter.service "${pkgdir}/usr/lib/systemd/user/pynoter.service"
 }
